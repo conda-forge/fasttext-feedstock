@@ -18,7 +18,9 @@ build:
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
 
 test:
   commands:
