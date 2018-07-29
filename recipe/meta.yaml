@@ -1,7 +1,7 @@
 {% set name = "fasttext" %}
 {% set version = "0.1.0" %}
 {% set release_name = "431c9e2" %}
-{% set sha256 = "8c4ba14372d160fe7de902299caac664b7c1af1778601e17ca18ca2081b0e253" %}
+{% set sha256 = "58a4391c83618405c65a2319a9c2dd1b26cbb864aa4042e4496dc5297d9ac7b5" %}
 
 package:
   name: {{ name|lower }}
@@ -18,7 +18,9 @@ build:
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
 
 test:
   commands:

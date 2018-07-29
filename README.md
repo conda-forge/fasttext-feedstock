@@ -14,14 +14,16 @@ Summary: fastText - Library for efficient text classification and representation
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/fasttext-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/fasttext-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/fasttext-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/fasttext-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/fasttext-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/fasttext-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/fasttext-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/fasttext-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/fasttext/badges/version.svg)](https://anaconda.org/conda-forge/fasttext)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/fasttext/badges/downloads.svg)](https://anaconda.org/conda-forge/fasttext)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-fasttext-green.svg)](https://anaconda.org/conda-forge/fasttext) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/fasttext.svg)](https://anaconda.org/conda-forge/fasttext) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/fasttext.svg)](https://anaconda.org/conda-forge/fasttext) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/fasttext.svg)](https://anaconda.org/conda-forge/fasttext) |
 
 Installing fasttext
 ===================
