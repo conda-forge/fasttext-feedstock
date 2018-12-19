@@ -1,5 +1,5 @@
 {% set name = "fasttext" %}
-{% set version = "0.1.0" %}
+{% set version = "0.2.0" %}
 {% set release_name = "431c9e2" %}
 {% set sha256 = "58a4391c83618405c65a2319a9c2dd1b26cbb864aa4042e4496dc5297d9ac7b5" %}
 
