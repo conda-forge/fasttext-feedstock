@@ -1,7 +1,6 @@
 {% set name = "fasttext" %}
 {% set version = "0.2.0" %}
-{% set release_name = "431c9e2" %}
-{% set sha256 = "58a4391c83618405c65a2319a9c2dd1b26cbb864aa4042e4496dc5297d9ac7b5" %}
+{% set sha256 = "71d24ffec9fcc4364554ecac2b3308d834178c903d16d090aa6be9ea6b8e480c" %}
 
 package:
   name: {{ name|lower }}
@@ -9,11 +8,11 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/facebookresearch/fastText/archive/{{ release_name }}.tar.gz
+  url: https://github.com/facebookresearch/fastText/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -28,8 +27,8 @@ test:
 
 about:
   home: https://fasttext.cc/
-  license: BSD-3-Clause
-  license_family: BSD
+  license: MIT
+  license_family: MIT
   license_file: LICENSE
   summary: 'fastText - Library for efficient text classification and representation learning'
   dev_url: https://github.com/facebookresearch/fastText
