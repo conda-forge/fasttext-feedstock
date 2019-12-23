@@ -1,18 +1,18 @@
 {% set name = "fasttext" %}
-{% set version = "0.2.0" %}
-{% set sha256 = "71d24ffec9fcc4364554ecac2b3308d834178c903d16d090aa6be9ea6b8e480c" %}
+{% set version = "0.9.1" %}
+{% set sha256 = "254ace2fc8dc3bea0fc6ad4897a221eb85c1e9adfa61d130b43398193ca1f061" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: v{{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/facebookresearch/fastText/archive/{{ version }}.tar.gz
+  fn: {{ name }}-v{{ version }}.tar.gz
+  url: https://github.com/facebookresearch/fastText/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
