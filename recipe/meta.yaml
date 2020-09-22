@@ -1,6 +1,6 @@
 {% set name = "fasttext" %}
-{% set version = "0.2.0" %}
-{% set sha256 = "71d24ffec9fcc4364554ecac2b3308d834178c903d16d090aa6be9ea6b8e480c" %}
+{% set version = "0.9.2" %}
+{% set sha256 = "7ea4edcdb64bfc6faaaec193ef181bdc108ee62bb6a04e48b2e80b639a99e27e" %}
 
 package:
   name: {{ name|lower }}
@@ -8,18 +8,17 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/facebookresearch/fastText/archive/{{ version }}.tar.gz
+  url: https://github.com/facebookresearch/fastText/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
   build:
-    - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-  host:
+    - make
 
 test:
   commands:
@@ -38,3 +37,4 @@ about:
 extra:
   recipe-maintainers:
     - JungeAlexander
+    - kylebgorman
