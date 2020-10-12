@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -32,7 +32,6 @@ about:
   summary: 'fastText - Library for efficient text classification and representation learning'
   dev_url: https://github.com/facebookresearch/fastText
   doc_url: https://fasttext.cc/docs/en/support.html
-  license: BSD-3-Clause
 
 extra:
   recipe-maintainers:
