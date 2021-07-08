@@ -12,17 +12,29 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+  host:
+    - python
+    - pybind11
+    - pip
     - make
+    - numpy
+    - scipy
+  run:
+    - python
+    - numpy
+    - scipy
 
 test:
   commands:
     - fasttext supervised -h || [[ $? == 1 ]]  # -h returns 1
+  imports:
+    - fasttext
 
 about:
   home: https://fasttext.cc/
