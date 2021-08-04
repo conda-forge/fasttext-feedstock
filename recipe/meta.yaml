@@ -19,16 +19,17 @@ requirements:
   build:
     - {{ compiler('cxx') }}
   host:
-    - python
-    - pybind11
-    - pip
     - make
     - numpy
-    - scipy
-  run:
+    - pip
+    - pybind11 >=2.2
     - python
+    - setuptools >=0.7.0
+  run:
     - numpy
-    - scipy
+    - pybind11 >=2.2
+    - python
+    - setuptools >=0.7.0
 
 test:
   commands:
