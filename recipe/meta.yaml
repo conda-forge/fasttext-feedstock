@@ -12,12 +12,13 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 6
+  number: 7
   skip: true  # [win]
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - make
     - numpy >=1.17
