@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 7
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -34,7 +34,6 @@ requirements:
     - numpy >=1.17
     - pybind11 >=2.2
     - python
-    - setuptools >=0.7.0
 
 test:
   commands:
