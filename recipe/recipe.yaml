@@ -16,7 +16,6 @@ source:
 
 build:
   number: 0
-  skip: win
   script:
     - if: win
       then: |
