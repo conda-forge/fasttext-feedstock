@@ -17,6 +17,22 @@ source:
 build:
   number: 0
   skip: win
+  script:
+    - if: win
+      then: |
+        cmake -GNinja ^
+            -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
+            -DBUILD_SHARED_LIBS=ON ^
+            %SRC_DIR%
+        ninja install
+        python -m pip install --no-deps --no-build-isolation -vv .
+      else: |
+        cmake -GNinja \
+              -DCMAKE_INSTALL_PREFIX=$PREFIX \
+              -DBUILD_SHARED_LIBS=ON \
+              $SRC_DIR
+        ninja install
+        python -m pip install --no-deps --no-build-isolation -vv .
 
 requirements:
   build:
@@ -50,6 +66,31 @@ tests:
       pip_check: false
   - script:
       - fasttext supervised -h || [[ $? == 1 ]]
+  - package_contents:
+      include:
+        - fasttext/args.h
+        - fasttext/autotune.h
+        - fasttext/densematrix.h
+        - fasttext/dictionary.h
+        - fasttext/fasttext.h
+        - fasttext/loss.h
+        - fasttext/matrix.h
+        - fasttext/meter.h
+        - fasttext/model.h
+        - fasttext/productquantizer.h
+        - fasttext/quantmatrix.h
+        - fasttext/real.h
+        - fasttext/utils.h
+        - fasttext/vector.h
+      bin:
+        - fasttext
+      lib:
+        - fasttext
+      site_packages:
+        - fasttext
+        - fasttext.util
+      files:
+        - "*/pkgconfig/fasttext.pc"
 
 about:
   license: MIT
