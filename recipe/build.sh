@@ -3,4 +3,4 @@ make -j"${CPU_COUNT}" CXX="${CXX}"
 mkdir -p "${PREFIX}/bin"
 mv fasttext "${PREFIX}/bin"
 
-"${PYTHON}" -m pip install --no-deps --ignore-installed -v .
+python -m pip install --no-deps --no-build-isolation -vv .

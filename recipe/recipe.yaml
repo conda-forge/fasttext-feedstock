@@ -1,0 +1,60 @@
+schema_version: 1
+
+context:
+  name: fasttext
+  version: 0.9.2
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/facebookresearch/fastText/archive/v${{ version }}.tar.gz
+  sha256: 7ea4edcdb64bfc6faaaec193ef181bdc108ee62bb6a04e48b2e80b639a99e27e
+
+build:
+  number: 0
+  skip: win
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - numpy
+        - pybind11
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+    - make
+  host:
+    - python
+    - pip
+    - setuptools >=0.7.0
+    - numpy >=1.17
+    - pybind11 >=2.2
+  run:
+    - python
+    - numpy >=1.17
+    - pybind11 >=2.2
+
+tests:
+  - python:
+      imports:
+        - fasttext
+      pip_check: false
+  - script:
+      - fasttext supervised -h || [[ $? == 1 ]]
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: fastText - Library for efficient text classification and representation learning
+  homepage: https://fasttext.cc/
+  repository: https://github.com/facebookresearch/fastText
+  documentation: https://fasttext.cc/docs/en/support.html
+
+extra:
+  recipe-maintainers:
+    - JungeAlexander
+    - kylebgorman
