@@ -16,22 +16,14 @@ source:
 
 build:
   number: 0
-  script:
-    - if: win
-      then: |
-        cmake -GNinja ^
-            -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
-            -DBUILD_SHARED_LIBS=ON ^
-            %SRC_DIR%
-        ninja install
-        python -m pip install --no-deps --no-build-isolation -vv .
-      else: |
-        cmake -GNinja \
-              -DCMAKE_INSTALL_PREFIX=$PREFIX \
-              -DBUILD_SHARED_LIBS=ON \
-              $SRC_DIR
-        ninja install
-        python -m pip install --no-deps --no-build-isolation -vv .
+  skip: win
+  script: |
+    cmake -GNinja \
+          -DCMAKE_INSTALL_PREFIX=$PREFIX \
+          -DBUILD_SHARED_LIBS=ON \
+          $SRC_DIR
+    ninja install
+    python -m pip install --no-deps --no-build-isolation -vv .
 
 requirements:
   build:
