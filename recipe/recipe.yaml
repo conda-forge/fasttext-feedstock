@@ -11,8 +11,8 @@ package:
 source:
   # url: https://github.com/facebookresearch/fastText/archive/v${{ version }}.tar.gz
   # sha256: 7ea4edcdb64bfc6faaaec193ef181bdc108ee62bb6a04e48b2e80b639a99e27e
-  git: https://github.com/PeterStaar-IBM/fastText.git
-  rev: c86fcd1a9626a0b13c25cf055db82ddf97917865
+  url: https://github.com/PeterStaar-IBM/fastText/archive/c86fcd1a9626a0b13c25cf055db82ddf97917865.zip
+  sha256: 9f6515aa0421a26b3d108ac0f39b4fc9472b0275a7334a72c4aca16b7795178a
 
 build:
   number: 0
