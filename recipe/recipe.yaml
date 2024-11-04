@@ -28,7 +28,7 @@ requirements:
         - pybind11
     - ${{ compiler('cxx') }}
     - ${{ stdlib("c") }}
-    - make
+    - ninja
   host:
     - python
     - pip
