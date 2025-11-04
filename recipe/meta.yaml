@@ -25,8 +25,8 @@ requirements:
     - pybind11                               # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
-  host:
     - make
+  host:
     - numpy >=1.17
     - pip
     - pybind11 >=2.2
