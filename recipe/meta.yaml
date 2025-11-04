@@ -10,9 +10,11 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/facebookresearch/fastText/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - patches/cstdint.patch
 
 build:
-  number: 7
+  number: 8
   skip: true  # [win]
 
 requirements:
