@@ -27,16 +27,16 @@ requirements:
     - {{ stdlib("c") }}
     - make
   host:
-    - numpy >=1.17
+    - numpy
     - pip
-    - pybind11 >=2.2
+    - pybind11
     - python
-    - setuptools >=0.7.0
+    - setuptools
   run:
-    - numpy >=1.17
-    - pybind11 >=2.2
+    - numpy
+    - pybind11
     - python
-    - setuptools >=0.7.0
+    - setuptools
 
 test:
   commands:
