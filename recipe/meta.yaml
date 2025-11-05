@@ -19,20 +19,25 @@ build:
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
+    - make
   host:
     - make
-    - numpy >=1.17
+    - numpy
     - pip
-    - pybind11 >=2.2
+    - pybind11
     - python
-    - setuptools >=0.7.0
+    - setuptools
   run:
-    - numpy >=1.17
-    - pybind11 >=2.2
+    - numpy
+    - pybind11
     - python
-    - setuptools >=0.7.0
+    - setuptools
 
 test:
   commands:
